@@ -86,10 +86,10 @@ class Condition extends React.Component {
           .state
           .data
           .rules
-          .map((rule, index) => {
+          .map((rule) => {
             if (rule.field) {
               return (<Rule
-                key={index}
+                key={rule.nodeName}
                 buttonsText={this.props.buttonsText}
                 fields={this.props.fields}
                 operators={this.props.config.operators}
@@ -99,7 +99,7 @@ class Condition extends React.Component {
                 styles={this.props.config.styles} />);
             } else {
               return (<Condition
-                key={index}
+                key={rule.nodeName}
                 config={this.props.config}
                 buttonsText={this.props.buttonsText}
                 fields={this.props.fields}
